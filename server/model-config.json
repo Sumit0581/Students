@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "Studentdb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "Studentdb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "Studentdb",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "Studentdb",
+    "public": false
+  },
+  "Student": {
+    "dataSource": "Studentdb",
+    "public": true
+  },
+  "StudentCourse": {
+    "dataSource": "Studentdb",
+    "public": false
+  },
+  "Course": {
+    "dataSource": "Studentdb",
+    "public": true
+  },
+  "CourseTeacher": {
+    "dataSource": "Studentdb",
+    "public": false
+  },
+  "Teacher": {
+    "dataSource": "Studentdb",
+    "public": true
+  },
+  "container": {
+    "dataSource": "files",
+    "public": true
+  },
+  "Marks": {
+    "dataSource": "Studentdb",
+    "public": true
+  },
+  "Test": {
+    "dataSource": "Studentdb",
+    "public": true
+  },
+  "StudentTest": {
+    "dataSource": "Studentdb",
+    "public": false
+  }
+}

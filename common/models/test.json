@@ -1,0 +1,31 @@
+{
+  "name": "Test",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Name": {
+      "type": "string",
+      "id": true,
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "students": {
+      "type": "hasAndBelongsToMany",
+      "model": "Student",
+      "foreignKey": "testId",
+      "through": "StudentTest"
+    },
+    "marks": {
+      "type": "hasMany",
+      "model": "Marks",
+      "foreignKey": "testId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

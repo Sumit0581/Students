@@ -1,0 +1,39 @@
+{
+  "name": "Teacher",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Experience": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "courses": {
+      "type": "hasAndBelongsToMany",
+      "model": "Course",
+      "foreignKey": "teacherId",
+      "through": "CourseTeacher"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

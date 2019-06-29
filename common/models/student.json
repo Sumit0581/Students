@@ -1,0 +1,50 @@
+{
+  "name": "Student",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Age": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "courses": {
+      "type": "hasAndBelongsToMany",
+      "model": "Course",
+      "foreignKey": "studentId",
+      "through": "StudentCourse"
+    },
+    "marks": {
+      "type": "hasMany",
+      "model": "Marks",
+      "foreignKey": "studentId"
+    },
+    "tests": {
+      "type": "hasAndBelongsToMany",
+      "model": "Test",
+      "foreignKey": "studentId",
+      "through": "StudentTest"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,23 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "Studentdb": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "Studentdb",
+    "password": "sumit123",
+    "name": "Studentdb",
+    "user": "postgres",
+    "connector": "postgresql"
+  },
+  "files": {
+    "name": "files",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage",
+    "nameConflict": "makeUnique"
+  }
+}
