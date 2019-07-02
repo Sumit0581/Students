@@ -36,6 +36,17 @@
       "model": "Test",
       "foreignKey": "studentId",
       "through": "StudentTest"
+    },
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "CustomAccessToken",
+      "polymorphic": {
+	"foreignKey": "userId",
+	"discriminator": "principalType"
+      },
+      "options": {
+	"disableInclude": true
+	}
     }
   },
   "acls": [

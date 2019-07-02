@@ -25,6 +25,17 @@
       "model": "Course",
       "foreignKey": "teacherId",
       "through": "CourseTeacher"
+    },
+     "accessTokens": {
+      "type": "hasMany",
+      "model": "CustomAccessToken",
+      "polymorphic": {
+	"foreignKey": "userId",
+	"discriminator": "principalType"
+      },
+      "options": {
+	"disableInclude": true
+	}
     }
   },
   "acls": [

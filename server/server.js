@@ -28,6 +28,10 @@ app.use('/', function (req, res, next) {
   console.log(req.sessionKey);
   next();
 });
+app.post('/api/Courses', function (req, res, next) {
+  console.log(`${req.body.Name} added as a new course`);
+  next();
+});
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.

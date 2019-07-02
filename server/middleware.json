@@ -1,8 +1,8 @@
 {
   "initial:before": {
     "loopback#favicon": {
-		"params": "$!../client/Icon.png"
-	},
+      "params": "$!../client/Icon.png"
+    },
     "./middleware/caller": {}
   },
   "initial": {
@@ -35,16 +35,27 @@
     }
   },
   "session": {
-	"cookie-session": {
-		"params": {
-			"name": "TestSession",			
-			"keys": ["test_secret"],
-			"maxAge" : 8640000
-		}
-	}
+    "cookie-session": {
+      "params": {
+        "name": "TestSession",
+        "keys": [
+          "test_secret"
+        ],
+        "maxAge": 8640000
+      }
+    }
+  },
+  "auth": { 
+   "loopback#token": {
+      "params": {
+        "model": "CustomAccessToken"
+      }
+    }
 },
-  "auth": {},
-  "parse": {},
+  "parse": {
+	"body-parser#json": {},
+        "body-parser#urlencoded": {"params": { "extended": true }}
+},
   "routes": {
     "loopback#rest": {
       "paths": [

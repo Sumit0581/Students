@@ -71,5 +71,9 @@
   "StudentTest": {
     "dataSource": "Studentdb",
     "public": false
+  },
+  "CustomAccessToken": {
+    "dataSource": "Studentdb",
+    "public": false
   }
 }
