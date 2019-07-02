@@ -1,6 +1,9 @@
 {
   "initial:before": {
-    "loopback#favicon": {}
+    "loopback#favicon": {
+		"params": "$!../client/Icon.png"
+	},
+    "./middleware/caller": {}
   },
   "initial": {
     "./middleware/tracker": {},
@@ -31,7 +34,15 @@
       "enabled": false
     }
   },
-  "session": {},
+  "session": {
+	"cookie-session": {
+		"params": {
+			"name": "TestSession",			
+			"keys": ["test_secret"],
+			"maxAge" : 8640000
+		}
+	}
+},
   "auth": {},
   "parse": {},
   "routes": {
